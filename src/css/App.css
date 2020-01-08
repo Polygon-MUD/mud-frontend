@@ -1,0 +1,15 @@
+.App {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  width: 90%;
+  height: 80%;
+  border-color: blue;
+  
+}

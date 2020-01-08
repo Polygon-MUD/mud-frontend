@@ -1,0 +1,19 @@
+.navWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+}
+
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    list-style-type: none;
+}
+
+li {
+    padding: 1rem;
+}

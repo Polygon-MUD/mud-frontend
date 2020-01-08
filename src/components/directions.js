@@ -3,7 +3,7 @@ import React from 'react'
 const Directions = () =>{
     return(
         <div>
-            Hello World
+            Directions
         </div>
     )
 }
