@@ -1,6 +1,5 @@
-import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
+import React, {useEffect} from 'react';
+import {Route} from 'react-router-dom' 
 import './css/App.css';
 
 //Components
@@ -14,15 +13,11 @@ import Initialize from './Init/init';
 import Nav from './components/nav.js'
 
 function App() {
+  useEffect(() => {
+    Initialize();
+  }, [])
   return (
     <div className="App">
-      <Login/>
-      <Register/>
-      <Initialize/>
-      {/* <Map /> */}
-      {/* <Inventory />*/}
-      {/* <Chat />*/}
-      {/* <Directions />*/}
       <Nav /> 
       <div className="main">
         <Map />
@@ -32,6 +27,9 @@ function App() {
         <div className="sidePanelItem"><Directions /></div>
         </div>
       </div>
+
+      <Route path='/login' component={Login}/>
+      <Route path='/register' component={Register}/>
     </div>
   );
 }

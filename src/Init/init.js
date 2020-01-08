@@ -47,7 +47,8 @@ import axiosWithAuth from '../utils/axiosWithAuth'
 
 function Initialize() {
         // const [data, setData] = useState([])
-        let key = 'Token' + localStorage.getItem('key')
+        let key = 'Token ' + localStorage.getItem('key')
+        console.log(key)
         //useEffect(() => {
                 //https://lambda-mud-test.herokuapp.com/api/adv/rooms
             //const axiosAuth = axiosWithAuth();
