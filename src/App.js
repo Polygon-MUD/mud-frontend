@@ -20,9 +20,9 @@ function App() {
       <Register/>
       <Initialize/>
       {/* <Map /> */}
-      <Inventory />
-      <Chat />
-      <Directions />
+      {/* <Inventory />*/}
+      {/* <Chat />*/}
+      {/* <Directions />*/}
       <Nav /> 
       <div className="main">
         <Map />
