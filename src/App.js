@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Route} from 'react-router-dom' 
 import './css/App.css';
 
@@ -13,6 +13,9 @@ import Initialize from './Init/init';
 import Nav from './components/nav.js'
 
 function App() {
+  useEffect(() => {
+    Initialize();
+  }, [])
   return (
     <div className="App">
       <Nav /> 
