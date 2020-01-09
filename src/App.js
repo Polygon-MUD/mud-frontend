@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios'
 import {Route} from 'react-router-dom' 
 import './css/App.css';
 
@@ -9,18 +10,35 @@ import Chat from './components/chat.js'
 import Directions from './components/directions.js'
 import Login from './components/login.js'
 import Register from './components/register.js';
-import Initialize from './Init/init';
 import Nav from './components/nav.js'
 
 function App() {
+  const [rooms, setRooms] = useState([])
   useEffect(() => {
-    Initialize();
-  }, [])
+      init()
+    },[])
+
+  const init = () => {
+    let key = 'Token ' + localStorage.getItem('key')
+    console.log(key)
+    axios.get(
+      'https://mud-build.herokuapp.com/api/adv/init/',
+      {headers: {
+          "Authorization" : key
+      }})
+    .then(res => {           
+      console.log('GET ROOMS: ', res.data)
+      setRooms(res.data)
+      console.log(rooms)
+    })
+    .catch(err => console.log('INIT GET ERROR:  ', err))
+  }
+  
   return (
     <div className="App">
       <Nav /> 
       <div className="main">
-        <Map />
+        <Map rooms={rooms}/>
         <div className="sidePanel">
         <div className="sidePanelItem"><Inventory /></div>
         <div className="sidePanelItem"><Chat /></div>

@@ -1,18 +1,12 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
+
 import '../css/Map.css'
 
-const Map = () =>{
+const Map = (rooms) =>{
     return(
         <div className="mapWrapper">
-            MAP
-            mapWrapperm
-            mapWrapperm
-            mapWrapperm
-            mapWrapperm
-            mapWrapperm
-            mapWrapperm
-            mapWrapperm
-            
+            {rooms.name} 
         </div>
     )
 }
