@@ -1,0 +1,8 @@
+.tile{
+    background: beige;
+    display: inline-block;
+}
+
+.chest {
+    background-image: url(./assets/store.png);
+}

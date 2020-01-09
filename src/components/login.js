@@ -14,11 +14,11 @@ export default function Login(props) {
     function submitHandler(event) {
         event.preventDefault()
 
-        axios.post('https://lambda-mud-test.herokuapp.com/api/login/', user)
+        axios.post('https://mud-build.herokuapp.com/api/login/', user)
             .then(res => {
                 if (res.status === 200 && res.data) {
                     console.log('LOGIN SUCCESS!!',res.data.key)
-                    localStorage.setItem('key', res.data)
+                    localStorage.setItem('key', res.data.key)
                     // props.history.push('##game screen#')
                 }
             })

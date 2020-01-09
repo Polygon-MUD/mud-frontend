@@ -47,18 +47,18 @@ import axiosWithAuth from '../utils/axiosWithAuth'
 
 function Initialize() {
         // const [data, setData] = useState([])
-        let key = 'Token' + localStorage.getItem('key')
+        let key = 'Token ' + localStorage.getItem('key')
         //useEffect(() => {
                 //https://lambda-mud-test.herokuapp.com/api/adv/rooms
             //const axiosAuth = axiosWithAuth();
-            axios.get(
-                'https://lambda-mud-test.herokuapp.com/api/adv/init/',
+            let request =  axios.get(
+                'https://mud-build.herokuapp.com/api/adv/init/',
                 {headers: {
                     "Authorization" : key
                 }})
             .then(res => {
                 
-                console.log('GET ROOMS: ', res.data)
+                console.log('GET INIT: ', res.data)
                 // const rooms = res.data.rooms
                 // const[,[...fields]] = rooms
                 // console.log('SPREAD ROOMS: ', fields)
@@ -74,6 +74,18 @@ function Initialize() {
                 e.preventDefault();
                 Initialize()
             }
+        }
+
+        function initializing(dispatch) {
+            console.log("HEY, INITIAL DISPATCH: ", dispatch)
+            dispatch({type: 'INITIALIZING'})
+            request.then(res => {
+                dispatch({type: 'INITIALIZED', payload: res.data})
+            })
+            .catch(err => {
+                dispatch({type: 'ERROR', payload: err})
+            })
+
         }
         return (
             <div>
@@ -93,3 +105,27 @@ function Initialize() {
     
     }
     export default Initialize
+
+
+    // export const initalize = () => {
+        
+    //     let key = 'Token ' + localStorage.getItem('key')
+    //     const request = axios.get('https://mud-build.herokuapp.com/api/adv/init/', {
+    //         headers: {
+    //             'Authorization': key
+    //         }
+    //     })
+
+    //     return (dispatch) => {
+    //         console.log("HEY, INITIAL DISPATCH: ", dispatch)
+    //         dispatch({type: 'INITIALIZING'})
+    //         request.then(res => {
+    //             dispatch({type: 'INITIALIZED', payload: res.data})
+    //         })
+    //         .catch(err => {
+    //             dispatch({type: 'ERROR', payload: err})
+    //         })
+    //     }
+
+
+    // }
