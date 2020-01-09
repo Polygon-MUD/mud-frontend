@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { SPRITE_SIZE } from '../../config/constants'
 import './styles.css'
+import './Map.css'
 import axios from 'axios'
 import RoomMap from './roomMap'
 
@@ -35,8 +36,8 @@ const Map = () => {
 
 
     return (
-        <div>
-            <h1>Map</h1>
+        <div className = 'mapWrapper'>
+            {/* <h1>Map</h1> */}
             {/* <div>
                 {room.map((index) => <RoomMap
                     title={index.title}
@@ -48,10 +49,10 @@ const Map = () => {
                     position: "relative",
                     top: "0px",
                     left: "0px",
-                    width: "800px",
-                    height: "400px",
+                    width: "70vw",
+                    height: "82vh",
                     backgroundColor: "#9b7653",
-                    border: "4px solid white"
+                    border: "4px solid beige"
                 }}
             />
 
