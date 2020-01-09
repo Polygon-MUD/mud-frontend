@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
+import Register from './register';
 
 export default function Login(props) {
     const [user, setUser] = useState({ username: '', password: '' });
@@ -20,7 +21,7 @@ export default function Login(props) {
                 if (res.status === 200 && res.data) {
                     console.log('LOGIN SUCCESS!!',res.data.key)
                     localStorage.setItem('key', res.data.key)
-                    // props.history.push('##game screen#')
+                    props.history.push('/')
                 }
             })
             .catch(err => {
