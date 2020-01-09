@@ -11,7 +11,7 @@ const Inventory = () =>{
                 "Authorization" : key
             }})
           .then(res => {           
-            console.log('GET ROOMS: ', res.data)
+            console.log('GET INIT: ', res.data)
             return setPlayer(res.data)
           })
           .catch(err => console.log('INIT GET ERROR:  ', err)) 
