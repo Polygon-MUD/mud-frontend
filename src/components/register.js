@@ -7,7 +7,7 @@ const Register =  (props) => {
 
     const registerUser = (newUser) => {
 
-        axios.post('https://lambda-mud-test.herokuapp.com/api/registration/', newUser)
+        axios.post('https://mud-build.herokuapp.com/api/registration/', newUser)
         .then(res => {
             console.log('REGISTRATION RESPONSE:', res.data)
             if (res.status === 201 && res.data){

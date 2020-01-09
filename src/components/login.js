@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
+import Register from './register';
 
 export default function Login(props) {
     const [user, setUser] = useState({ username: '', password: '' });
@@ -14,12 +15,13 @@ export default function Login(props) {
     function submitHandler(event) {
         event.preventDefault()
 
-        axios.post('https://lambda-mud-test.herokuapp.com/api/login/', user)
+        axios.post('https://mud-build.herokuapp.com/api/login/', user)
             .then(res => {
+                console.log(res.status)
                 if (res.status === 200 && res.data) {
                     console.log('LOGIN SUCCESS!!',res.data.key)
-                    localStorage.setItem('key', res.data)
-                    // props.history.push('##game screen#')
+                    localStorage.setItem('key', res.data.key)
+                    props.history.push('/')
                 }
             })
             .catch(err => {
