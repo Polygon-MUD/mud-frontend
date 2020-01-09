@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../css/Nav.css';
 import Logo from '../image/finalFantasyLogo.png'
 
@@ -7,8 +8,8 @@ function Nav(){
         <div className='navWrapper'>
             <img src={Logo} alt="websiteLogo"/>
             <ul>
-                <li><a>Login</a></li>
-                <li><a>Register</a></li>
+                <li><Link to="/login" style={{textDecoration: 'none', color: 'black'}}>Login</Link></li>
+                <li><Link to="/register" style={{textDecoration: 'none', color: 'black'}}>Register</Link></li>
             </ul>
         </div>
     )

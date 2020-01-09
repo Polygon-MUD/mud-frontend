@@ -3,6 +3,7 @@
     flex-direction: row;
     align-items: center;
     padding: 1rem;
+    width: 100vw;
 }
 
 
@@ -10,11 +11,12 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    width: 100%;
     list-style-type: none;
+    width: 78%;
 }
 
 li {
     padding: 1rem;
     padding-bottom: 1rem;
 }
+
