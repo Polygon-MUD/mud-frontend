@@ -12,11 +12,10 @@ const Inventory = () =>{
             }})
           .then(res => {           
             console.log('GET ROOMS: ', res.data)
-            console.log("PLAYER  ",player)
             return setPlayer(res.data)
           })
           .catch(err => console.log('INIT GET ERROR:  ', err)) 
-      },[key,player])
+      },[])
    
     return(
         <div>
