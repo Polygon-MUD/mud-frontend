@@ -1,3 +1,5 @@
 body {
   background-color: rgba(116,8,22,1); 
+  height: 100vh;
+  position: fixed;
 }

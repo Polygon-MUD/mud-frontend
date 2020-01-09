@@ -1,7 +1,6 @@
 .App {
   display: flex;
   flex-direction: column;
-  
 }
 
 .main {
@@ -13,7 +12,7 @@
   border-color: blue;
   margin: 3rem;
   justify-content: space-around;
-
+  margin-bottom: 2rem;
 }
 
 .sidePanel {
