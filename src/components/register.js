@@ -80,7 +80,7 @@ const Register =  (props) => {
             <button type='submit'>Sign Up</button>
         </form>
 
-        <div className ='login-registration'>Already have an account?<Link to="/login"> Login Here</Link></div>
+        <div className ='login-registration'>Already have an account?<Link to="/"> Login Here</Link></div>
 
     </div>
 
