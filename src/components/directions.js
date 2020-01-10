@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-
+//Directions component in sidepanel.js
 const Directions = () =>{
     const [direction, setDirection] = useState({})
     let key = 'Token ' + localStorage.getItem('key')
     console.log(key, "KEY")
 
-
+//When a player clicks a Cardinal direction this runs 
+//and returns the rooms information
     const getDirection = (value) => {
         axios.post('https://mud-build.herokuapp.com/api/adv/move/', value,
             {headers: {Authorization : key,

@@ -3,9 +3,11 @@ import axios from 'axios'
 
 import '../css/Map.css'
 
+//map component 
 const Map = () =>{
     const [rooms, setRooms] = useState([])
 
+    //returns all of the rooms information
     useEffect(() => {
         axios.get('https://mud-build.herokuapp.com/api/adv/rooms')
         .then(res=>{

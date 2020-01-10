@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
+
+//Inventory component in sidepanel.js
 const Inventory = () =>{
     const [player, setPlayer] = useState({})
     let key = 'Token ' + localStorage.getItem('key')
+    //when component mounts the players information is displayed
       useEffect(() => {
         console.log("key_inventory",   key)
           axios.get('https://mud-build.herokuapp.com/api/adv/init/',
