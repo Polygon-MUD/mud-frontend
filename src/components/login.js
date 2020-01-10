@@ -19,7 +19,7 @@ export default function Login(props) {
             .then(res => {
                 console.log(res.status)
                 if (res.status === 200 && res.data) {
-                    console.log('LOGIN SUCCESS!!',res.data.key)
+                    console.log('LOGIN KEY',res.data.key)
                     localStorage.setItem('key', res.data.key)
                     props.history.push('/')
                 }

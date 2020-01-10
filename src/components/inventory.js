@@ -4,15 +4,14 @@ const Inventory = () =>{
     const [player, setPlayer] = useState({})
     let key = 'Token ' + localStorage.getItem('key')
       useEffect(() => {
-        console.log(key)
-          axios.get(
-            'https://mud-build.herokuapp.com/api/adv/init/',
+        console.log("key_inventory",   key)
+          axios.get('https://mud-build.herokuapp.com/api/adv/init/',
             {headers: {
-                "Authorization" : key
+                Authorization : key
             }})
           .then(res => {           
             console.log('GET INIT: ', res.data)
-            return setPlayer(res.data)
+            setPlayer(res.data)
           })
           .catch(err => console.log('INIT GET ERROR:  ', err)) 
       },[])
