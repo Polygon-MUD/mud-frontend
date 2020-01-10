@@ -16,7 +16,7 @@ const Map = () =>{
         .catch(err => {
             console.log("error", err)
         })
-    }, [rooms])
+    }, [])
     return(
         <div className="mapWrapper">
             {rooms.map(room => <div>{room.title}</div>)} 

@@ -13,7 +13,7 @@ const Register =  (props) => {
             if (res.status === 201 && res.data){
                 console.log('REGISTRATION SUCCESS!!!')
                 localStorage.setItem('key', res.data.key)
-                //props,history.push('##game##')
+                props.history.push('/')
             }
         })
         .catch(err => {
