@@ -15,8 +15,8 @@ function App() {
     <> 
     <div className = 'body'>
       <Route exact path='/auth' component={Main}/>
-      <Route path='/' component={Login}/>
-      <Route path='/register' component={Register}/> 
+      <Route exact path='/' component={Login}/>
+      <Route exact path='/register' component={Register}/> 
       <Route exact path='/play' component={Play} />
     </div>
     </> 
