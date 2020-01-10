@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
+import Nav from './nav';
 
 const Register =  (props) => {
     const [inputs, setInputs] = useState({username: '', email: '', password1: '', password2: ''});
@@ -13,7 +14,7 @@ const Register =  (props) => {
             if (res.status === 201 && res.data){
                 console.log('REGISTRATION SUCCESS!!!')
                 localStorage.setItem('key', res.data.key)
-                //props,history.push('##game##')
+                props.history.push('/auth')
             }
         })
         .catch(err => {
@@ -34,9 +35,9 @@ const Register =  (props) => {
     }
 
     return(
-        <div>
-
-        <form onSubmit={handleSubmit}>
+        <div className = 'register'>
+            <Nav/>
+        <form className = 'register-container' onSubmit={handleSubmit}>
             <legend> Create an Account </legend>
             <span> Join the Fun </span>
 
