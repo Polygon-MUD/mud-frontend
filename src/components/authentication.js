@@ -1,5 +1,6 @@
 import React from 'react'
 import Login from '../components/login' 
+import { Link } from 'react-router-dom'
 
 const Authentication = ProtectedComponent => {
     return class extends React.Component {
@@ -19,7 +20,7 @@ const Authentication = ProtectedComponent => {
      }
 
      render() {
-        return (this.state.loggedIn ? <ProtectedComponent {...this.props} /> : <Login />);
+        return (this.state.loggedIn ? <ProtectedComponent {...this.props} /> :<Link to = '/'></Link>);
     }
     }
 }
