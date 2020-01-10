@@ -1,0 +1,8 @@
+.tile{
+    background: green;
+    display: inline-block;
+}
+
+.store{
+    background-image: url(./assets/store.png);
+}

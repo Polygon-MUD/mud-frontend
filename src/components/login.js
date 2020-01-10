@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 import Register from './register';
+import Nav from './nav';
 
 export default function Login(props) {
     const [user, setUser] = useState({ username: '', password: '' });
@@ -21,7 +22,7 @@ export default function Login(props) {
                 if (res.status === 200 && res.data) {
                     console.log('LOGIN SUCCESS!!',res.data.key)
                     localStorage.setItem('key', res.data.key)
-                    props.history.push('/')
+                    props.history.push('/auth')
                 }
             })
             .catch(err => {
@@ -30,13 +31,14 @@ export default function Login(props) {
     }
 
     return (
-        <div>
-
-            <form onSubmit={submitHandler}>
+        <div className = 'login'>
+            <Nav/>
+            <div>
+            <form className = 'login-container' onSubmit={submitHandler}>
                 <legend> Welcome Back </legend>
                 <span> Log in to your Account </span>
 
-                <label htmlFor='username'>Email</label>
+                <label htmlFor='username'>Username</label>
                 <input
                     type='text'
                     id='username'
@@ -56,7 +58,7 @@ export default function Login(props) {
 
                 <button type='submit'>Enter</button>
             </form>
-
+            </div>
             <div className ='login-registration'>Need an account?<Link to="/register">Register Here</Link></div>
 
         </div>

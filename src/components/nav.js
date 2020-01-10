@@ -7,10 +7,10 @@ function Nav(){
     return(
         <div className='navWrapper'>
             <img src={Logo} alt="websiteLogo"/>
-            <ul>
+            {/* <ul>
                 <li><Link to="/login" style={{textDecoration: 'none', color: 'black'}}>Login</Link></li>
                 <li><Link to="/register" style={{textDecoration: 'none', color: 'black'}}>Register</Link></li>
-            </ul>
+            </ul> */}
         </div>
     )
 }
